@@ -1,0 +1,56 @@
+.card {
+    width: 15rem;
+    height: 10rem;
+    text-align: center;
+    color: white;
+    border-radius: 5%;
+}
+
+.card h2 {
+    font-size: 2rem;
+}
+
+#demo2 {
+    color: rgb(233, 33, 19);
+}
+
+.show {
+    padding-top: 10%;
+}
+
+i {
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+    color: orange;
+}
+
+.game-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 1px solid black; */
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 350px; */
+    height: 100px;
+}
+
+.selection button {
+    margin: 0px 50px;
+    padding: 25px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: rgb(41, 40, 40);
+    color: orange;
+}
