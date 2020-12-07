@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!--Chart CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <!--My CSS-->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Project - Apps</title>
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="../Project - Games/index.html" class="navbar-brand">Games</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse disp" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="news-link-app">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="weather-link-app">Weather</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="weight-link-app">Weight</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="stock-link-app">Stocks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="movie-link-app">Movies</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Weather Calculator-->
+    <div class="container invisible" id="weather-app">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-4 text-center mb-3">Weather Calculator</h1>
+                <form id="weather-search">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" id="city"
+                            placeholder="Enter a city name...">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <h3 id="weather-result"></h3>
+                <div id="weather-output">
+                    <div class="card bg-primary mb-2">
+                        <div class="card-body">
+                            <h4>Fahrenheit:</h4>
+                            <div id="fahrenheitOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-success mb-2">
+                        <div class="card-body">
+                            <h4>Degrees:</h4>
+                            <div id="degreeOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-danger mb-2">
+                        <div class="card-body">
+                            <h4>Kevlin:</h4>
+                            <div id="kevlinOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Weight Calculator-->
+    <div class="container invisible" id="weight-app">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-4 text-center mb-3">Weight Converter</h1>
+                <form>
+                    <div class="form-group">
+                        <input id="lbsInput" type="number" class="form-control form-control-lg"
+                            placeholder="Enter Pounds..." min="0" max="100000">
+                    </div>
+                </form>
+                <div id="weight-output">
+                    <div class="card bg-primary mb-2">
+                        <div class="card-body">
+                            <h4>Grams:</h4>
+                            <div id="gramsOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-success mb-2">
+                        <div class="card-body">
+                            <h4>Kilograms:</h4>
+                            <div id="kgOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-danger mb-2">
+                        <div class="card-body">
+                            <h4>Ounces:</h4>
+                            <div id="ozOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--News API-->
+    <div class="container invisible" id="news-app">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-4 text-center mb-3">Search News</h1>
+                <form id="news-search">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" id="search-term"
+                            placeholder="Search News...">
+                    </div>
+                    <!-- <button type="submit" class="btn btn-primary mb-3 mr-3">Submit</button> -->
+                    <input type="submit" class="btn btn-primary mb-3 mr-3" id="submitBtn" value="Submit" />
+                    <input type="button" class="btn btn-danger mb-3" id="resetBtn" value="Reset" />
+                </form>
+                <div id="news-output">
+                    <div class="card bg-info mb-2">
+                        <div class="card-body">
+                            <h4>Results:</h4>
+                            <div id="resultsOutput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Stocks API-->
+    <div class="container invisible" id="stock-app">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-4 text-center mb-3">Stocks Search</h1>
+                <form id="stock-search">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" id="stock"
+                            placeholder="Search stock...">
+                    </div>
+                    <!-- <button type="submit" class="btn btn-primary mb-3 mr-3">Submit</button> -->
+                    <input type="submit" class="btn btn-primary mb-3 mr-3" value="Submit" />
+                    <input type="button" class="btn btn-danger mb-3" id="stockresetBtn" value="Reset" />
+                </form>
+                <div id="stock-output">
+                    <div class="card bg-success mb-2">
+                        <div class="card-body">
+                            <h4>Result:</h4>
+                            <div id="stockOutput">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <canvas id="myChart"></canvas> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Create the chart here-->
+    <div id="chart"></div>
+
+    <!--Movies API-->
+    <div class="container invisible" id="movie-app">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-4 text-center mb-3">Movie Search</h1>
+                <form id="movie-search">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" id="movie"
+                            placeholder="Search movie...">
+                    </div>
+                    <!-- <button type="submit" class="btn btn-primary mb-3 mr-3">Submit</button> -->
+                    <input type="submit" class="btn btn-primary mb-3 mr-3" value="Submit" />
+                    <input type="button" class="btn btn-danger mb-3" id="movieresetBtn" value="Reset" />
+                </form>
+                <div id="movie-output">
+                    <div class="card bg-success mb-2">
+                        <div class="card-body">
+                            <h4>Result:</h4>
+                            <div id="movieOutput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
